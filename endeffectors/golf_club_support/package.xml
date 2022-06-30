@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+  <name>golf_club_support</name>
+  <version>0.0.2</version>
+  <description>
+    <p>Custom End Effector for Golf Capstone</p>
+  </description>
+  <author>acbuynak</author>
+  <author>JasonScharenberg</author>
+  <maintainer email="buynak.9@osu.edu">acbuynak</maintainer>
+  <license>Apache 2.0</license>
+
+  <url type="bugtracker">https://github.com/osu-aims/aims-robots-all/issues</url>
+  <url type="repository">https://github.com/osu-aims/aims-robots-all</url>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <architecture_independent/>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

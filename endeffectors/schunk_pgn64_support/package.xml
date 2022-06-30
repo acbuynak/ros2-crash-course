@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>schunk_pgn64_support</name>
+  <version>0.1.1</version>
+  <description>
+    <p>ROS-Industrial Support Package for the Schunk PGN-plus 64-1 Gripper</p>
+    <p>
+      <b>Configuration:</b>
+    </p>
+    <ul>
+      <li>MH5 - Compatible with Long and Short Variant</li>
+      <li>Schunk UZB 64 (300042)</li>
+      <li>Custom Gripper Fingers - Unserrated Model</li>
+    </ul>
+  </description>
+  <author>acbuynak</author>
+  <maintainer email="buynak.9@osu.edu">acbuynak</maintainer>
+  <license>Apache 2.0</license>
+
+  <url type="bugtracker">https://github.com/osu-aims/aims-robots-all/issues</url>
+  <url type="repository">https://github.com/osu-aims/aims-robots-all</url>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <architecture_independent/>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

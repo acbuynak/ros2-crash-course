@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:macro name="nikon_d5600_rot" params="prefix">
+
+<!-- Nikon D5600 Camera URDF: ROTATED -->
+
+    <link name="${prefix}camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://nikon_d5600_support/meshes/EEF_assembly_v1_rot_visual.STL"/>
+            </geometry>
+            <material name="camera">
+                <color rgba="0.5 0.8 0.5 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://nikon_d5600_support/meshes/EEF_assembly_v1_rot_collision.STL"/>
+            </geometry>
+        </collision>
+    </link>
+ 
+    <!-- Camera TCP Defined as the center point on the camera lens-->
+    <joint name="${prefix}camera_link-camera_tcp" type="fixed">
+        <origin xyz="0.020 0.13 0.095" rpy="-${radians(90)} 0 0"/>
+        <parent link="${prefix}camera_link"/>
+        <child link="${prefix}camera_tcp"/> 
+    </joint>
+
+    <link name="${prefix}camera_tcp"/>
+
+</xacro:macro>
+</robot>

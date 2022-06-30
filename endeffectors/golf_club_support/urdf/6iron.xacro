@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<robot name="eef_golf_6iron" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find golf_club_support)/urdf/6iron_macro.xacro" />
+    <xacro:golf_6iron prefix=""/>
+
+</robot>

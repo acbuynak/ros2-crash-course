@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:macro name="golf_6iron" params="prefix">
+
+<!-- Golf Club: 6-Iron  URDF -->
+
+    <link name="${prefix}mount_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://golf_club_support/meshes/club_6iron_visual.stl"/>
+            </geometry>
+            <material name="golf">
+                <color rgba="0.5 0.8 0.5 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://golf_club_support/meshes/club_6iron_collision.stl"/>
+            </geometry>
+        </collision>
+    </link>
+ 
+    <!-- Camera TCP Defined as the center point on the camera lens-->
+    <joint name="${prefix}mount_link-club_tcp" type="fixed">
+        <origin xyz="0.001 0.060 0.900" rpy="0 ${radians(107.79)} 0"/>
+        <parent link="${prefix}mount_link"/>
+        <child link="${prefix}club_tcp"/> 
+    </joint>
+
+    <link name="${prefix}club_tcp"/>
+
+</xacro:macro>
+</robot>

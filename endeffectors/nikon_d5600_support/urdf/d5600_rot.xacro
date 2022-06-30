@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<robot name="eef_nikon_d5600" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find nikon_d5600_support)/urdf/d5600_rot_macro.xacro" />
+    <xacro:nikon_d5600_rot prefix=""/>
+
+</robot>
