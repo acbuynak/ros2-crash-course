@@ -20,7 +20,7 @@ find_package(ament_cmake REQUIRED)
 
 # Install Misc ROS Elements
 install(
-  DIRECTORY config launch rosbag2_2022_11_05-00_47_38
+  DIRECTORY config launch
   DESTINATION share/${PROJECT_NAME}
 )
 
