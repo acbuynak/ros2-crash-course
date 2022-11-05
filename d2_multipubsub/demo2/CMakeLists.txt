@@ -39,7 +39,7 @@ find_package(rclpy REQUIRED)
 
 # Install Misc ROS Elements
 install(
-  DIRECTORY config launch scripts
+  DIRECTORY scripts
   DESTINATION share/${PROJECT_NAME}
 )
 
