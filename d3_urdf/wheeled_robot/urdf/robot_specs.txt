@@ -1,0 +1,13 @@
+Here are the specifications for the simple mobile robot:
+
+	Links:
+	1. One red cylinder with a radius of 0.05 meters and height of 0.02 meters for the base
+	2. One green cube with side length of 0.05 meters for the head
+	3. Two blue cylinders with a radius of 0.03 meters and height of 0.01 meters for the wheels
+
+	Joints:
+	1. A fixed joint that attaches the head to the base link
+	2. Two revolute joints that:
+		a. attach the wheels to the base link
+		b. rotate around the z-axis
+		c. have a rotation limit of +/- 2pi radians

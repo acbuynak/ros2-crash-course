@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+
+<robot name="mobile_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+    <!-- Link to the files that we'll use to build our robot  -->
+    <xacro:include filename="$(find robot_support)/urdf/head.xacro" />
+    <xacro:include filename="$(find robot_support)/urdf/wheel.xacro" />
+    <xacro:include filename="$(find robot_support)/urdf/base.xacro" />
+    
+    <!-- Create the base of the robot -->
+    <!-- Note: The name called after xacro (robot_base) is the name defined in line 3 of the part xacro file -->
+    <xacro:robot_base prefix=""/>
+
+    <!-- Create the head of the robot -->
+    <xacro:robot_head prefix=""/>
+
+    <!-- Create a left and right wheel -->
+    <!-- To create wheels with different names, we will supply a prefix to the wheel argument -->
+    <xacro:robot_wheel prefix="left"/>
+    <xacro:robot_wheel prefix="right"/>
+
+    <!-- Attach the created links using joints -->
+    <!-- Attach head_link to base_link -->
+    <joint name="head_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.035" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="head_link"/>
+    </joint>
+
+    <!-- Attach wheels to base_link -->
+    <joint name="left_wheel_joint" type="revolute">
+        <axis xyz="0 0 1"/>
+        <limit effort="100.0" lower="-3.14" upper="3.14" velocity="0.1"/>
+        <origin xyz="0.055 0.0 0.0" rpy="0.0 1.5708 0.0"/>
+        <parent link="base_link"/>
+        <child link="left_wheel_link"/>
+    </joint>
+
+    <joint name="right_wheel_joint" type="revolute">
+        <axis xyz="0 0 1"/>
+        <limit effort="100.0" lower="-3.14" upper="3.14" velocity="0.1"/>
+        <origin xyz="-0.055 0.0 0.0" rpy="0.0 1.5708 0.0"/>
+        <parent link="base_link"/>
+        <child link="right_wheel_link"/>
+    </joint>
+
+</robot>
